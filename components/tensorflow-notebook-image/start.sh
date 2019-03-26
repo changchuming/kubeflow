@@ -15,6 +15,10 @@
 
 set -e
 
+gsutil copy gs://anomaly-detection-jupyter/packages/anomalydetection.tar.gz /tmp/anomalydetection.tar.gz
+gsutil copy gs://anomaly-detection-jupyter/notebooks/anomalydetection.ipynb /home/jovyan/anomalydetection.ipynb
+pip3 install /tmp/anomalydetection.tar.gz
+
 # Handle special flags if we're root
 if [ $(id -u) == 0 ]; then
   # Handle username change. Since this is cheap, do this unconditionally
