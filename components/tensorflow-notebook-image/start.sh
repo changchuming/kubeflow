@@ -15,6 +15,7 @@
 
 set -e
 
+# Pull anomalydetection package and notebook from GCP project `anomaly-detection-jupyter`.
 gsutil copy gs://anomaly-detection-jupyter/packages/anomalydetection.tar.gz /tmp/anomalydetection.tar.gz
 gsutil copy gs://anomaly-detection-jupyter/notebooks/anomalydetection.ipynb /home/jovyan/anomalydetection.ipynb
 pip3 install /tmp/anomalydetection.tar.gz
