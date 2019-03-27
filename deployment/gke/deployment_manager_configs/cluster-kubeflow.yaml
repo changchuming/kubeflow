@@ -57,11 +57,11 @@ resources:
     # set gpu-pool-max-nodes to a none-zero value.
     gpu-pool-enable-autoscaling: true
     gpu-pool-min-nodes: 0
-    gpu-pool-max-nodes: 0
+    gpu-pool-max-nodes: 10
     # Controls gpu number per node, valid input: [1, num_cpu_per_node], for n1-standard-8, num_cpu_per_node = 8
     gpu-number-per-node: 1
     # Check https://cloud.google.com/compute/docs/gpus/ for available GPU models and their regions
-    gpu-type: nvidia-tesla-k80
+    gpu-type: nvidia-tesla-v100
     # Autoprovisioning parameters (only supported in gkeApiVersion v1beta1).
     # This is configured by the gkeApiVersion setting.
     autoprovisioning-config:
@@ -69,7 +69,7 @@ resources:
       max-cpu: 20
       max-memory: 200
       max-accelerator:
-        - type: nvidia-tesla-k80
+        - type: nvidia-tesla-v100
           count: 8
     # Whether to enable TPUs
     enable_tpu: false
